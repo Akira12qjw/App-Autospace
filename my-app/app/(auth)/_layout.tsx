@@ -12,14 +12,14 @@ export default function AuthLayout() {
         name="login"
         options={{
           headerShown: true,
-          headerTitle: "Quay về trang chủ",
+          headerTitle: "Quay lại",
         }}
       />
       <Stack.Screen
         name="register"
         options={{
           headerShown: true,
-          headerTitle: "Quay về trang chủ",
+          headerTitle: "Quay lại",
         }}
       />
     </Stack>

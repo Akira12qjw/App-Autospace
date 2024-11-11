@@ -1,3 +1,4 @@
+import CarSceneNative from "@/components/CarSceneNative";
 import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -7,6 +8,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       {/* Background Pattern */}
       <View style={styles.backgroundPattern}>
+        <CarSceneNative />
         {/* Bạn có thể thêm các hình vẽ vector hoặc SVG ở đây */}
       </View>
       <View style={styles.header}>
@@ -45,8 +47,10 @@ export default function HomeScreen() {
         </View>
 
         <TouchableOpacity style={styles.searchButton}>
-          <Ionicons name="search" size={24} color="black" />
-          <Text style={styles.searchText}>Search now</Text>
+          <Link href="/search" style={styles.loginText}>
+            <Ionicons name="search" size={24} color="black" />
+            <Text style={styles.searchText}>Tìm kiếm</Text>
+          </Link>
         </TouchableOpacity>
       </View>
     </View>
@@ -56,21 +60,21 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1A1A1A",
   },
   backgroundPattern: {
     position: "absolute",
     width: "100%",
     height: "100%",
-    opacity: 0.1,
+    opacity: 0.6,
   },
   contentContainer: {
     flex: 1,
     paddingHorizontal: 20,
-    justifyContent: "center",
+    marginTop: 50,
+    justifyContent: "flex-start",
   },
   textContainer: {
-    marginBottom: 20,
+    marginBottom: 25,
   },
   needContainer: {
     backgroundColor: "#FFD700",
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderBottomWidth: 1,
     borderBottomColor: "#E5E5E5",
-    height: "13%",
+    height: "15%",
   },
   leftSection: {
     flexDirection: "column",
